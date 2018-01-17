@@ -2,6 +2,11 @@
 from influxdb import InfluxDBClient
 
 def writeDB(createdate,value,group):
+    Influx_server ='[Server Address]'
+    Influx_account = '[Accout]'
+    Influx_pwd = '[password]'
+    Database = '[Database Name]'
+
     json_body = [
         {
             "measurement":"PMI",
@@ -15,5 +20,5 @@ def writeDB(createdate,value,group):
         }
     ]
 
-    client = InfluxDBClient('localhost', 8086, 'root', '', 'Jira')
+    client = InfluxDBClient(Influx_server, 8086, Influx_account, Influx_pwd, Database)
     client.write_points(json_body)

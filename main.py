@@ -4,9 +4,12 @@ from jira import JIRA
 import datetime,calculatePMI
 import influx
 
-now = datetime.datetime.now()
+UserName='[User Account]'
+Password='[Password]'
+Server='[Server Address]'
 
-jira = JIRA(basic_auth=(UserName, Password), options={'server': server address})
+now = datetime.datetime.now()
+jira = JIRA(basic_auth=(UserName, Password), options={'server': Server})
 
 NotCloseIssues=jira.search_issues(jql_str='project = Qt_NavUI AND type = Bug AND status != Done')
 
@@ -52,7 +55,7 @@ print "Odin Score:", odin_score
 print "Taipei Score:", taipei_score
 print "Unassigned Score:", unassigned_score
 
-
+'''
 date = str(now.date())
 
 influx.writeDB(date,float(total_score),'total')
@@ -61,4 +64,4 @@ influx.writeDB(date,float(guanyu_score),'guanyu')
 influx.writeDB(date,float(odin_score),'odin')
 influx.writeDB(date,float(taipei_score),'taipei')
 influx.writeDB(date,float(unassigned_score),'unassigned')
-
+'''
