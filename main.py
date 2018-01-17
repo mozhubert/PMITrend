@@ -6,7 +6,7 @@ import influx
 
 now = datetime.datetime.now()
 
-jira = JIRA(basic_auth=(UserName, Password), options={'server': 'https://jira.tomtomgroup.com/'})
+jira = JIRA(basic_auth=(UserName, Password), options={'server': server address})
 
 NotCloseIssues=jira.search_issues(jql_str='project = Qt_NavUI AND type = Bug AND status != Done')
 
