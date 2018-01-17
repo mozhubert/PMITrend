@@ -55,7 +55,7 @@ print "Odin Score:", odin_score
 print "Taipei Score:", taipei_score
 print "Unassigned Score:", unassigned_score
 
-'''
+
 date = str(now.date())
 
 influx.writeDB(date,float(total_score),'total')
@@ -64,4 +64,3 @@ influx.writeDB(date,float(guanyu_score),'guanyu')
 influx.writeDB(date,float(odin_score),'odin')
 influx.writeDB(date,float(taipei_score),'taipei')
 influx.writeDB(date,float(unassigned_score),'unassigned')
-'''
